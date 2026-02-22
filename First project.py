@@ -1,21 +1,59 @@
-import tkinter as tk  # استدعاء مكتبة Tkinter
+health = 100
+gold = 10
 
-# إنشاء نافذة
-window = tk.Tk()
-window.title("أول نافذة لي يا عثمان")
-window.geometry("300x200")  # حجم النافذة
+def status():
+        print("صحتك هي", health)
+        print("ذهبك هو ", gold)
 
-# دالة عند الضغط على الزر
-def say_hello():
-    label.config(text="مرحبا يا عثمان!")
+print("اهلا بك في لعبة الفتى المغامر انت مغامر و هدفك قتل وحش اسطوري")
 
-# نص في النافذة
-label = tk.Label(window, text="اضغط الزر!")
-label.pack(pady=20)
-
-# زر
-button = tk.Button(window, text="اضغطني", command=say_hello)
-button.pack(pady=10)
-
-# تشغيل النافذة
-window.mainloop()
+while health >0:
+        status()
+        
+        print("1- الذهاب للغابة")
+        print("2- الذهاب للكهف")
+        print("3- الذهاب لقرية الاموات")
+        
+        c = int(input("اختار رقم: "))
+        
+        if c == 1:
+                print("لقد ذخلت الغابة ")
+                print("اوه ما هذا ... انه ذهب في الارض واو")
+                gold = gold + 10
+                print("لحظة لقد دسنا على غصن شجرة .. انه وحش اسطورييي")
+                
+                x = input("ماذا تفعل هل سوف تقاتله ؟ ( اكتب نعم او لا او لا شيء): ")
+                
+                if x == "نعم":
+                        print("الوحش يهجم... لقد ضربنا دمك هو ", health)
+                        health = health - 10
+                        print("هيا اهجم ... لقد قتلناه احسنت")
+                        gold = gold + 50
+                        
+                elif x == "لا":
+                        print("هيا نهرببب!")
+                        print("لحظة .. انه تنييين و لديه كرات نارية .. لقد ضربنااا")
+                        health = health - 10
+                        print("لقد هربنا اخيرا لاكن ... دمنا نقص كثيرا", health)
+                        
+                elif x == "لا شيء":
+                        print("لقد متنا للاسف")
+                        
+                        
+                        
+                        
+                elif c == 2:
+                        print("لا ترفع صوتك")
+                        print("انه ذهبب")
+                        gold = gold + 23
+                        print("هيا نخرج افضل المكان مخيف")
+                        
+                elif c == 3:
+                        print("لقد وصلنا للقرية")
+                        print("يا للهول انها مدمرة")
+                        print("انه زومبي ... ليس 1 انهم جيش من الزومبي")
+                        health = health - 20
+                        print("هيا نهرب افضل...")
+                        
+                else:
+                        print("من الافضل التخييم هنا")
